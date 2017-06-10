@@ -91,6 +91,12 @@ $ tree
 
 ##### Coordinates
 
+3 data struct options:
+- tuple `{1, 1}` but cannot be encoded as JSON
+- map `%{row: 1, col: 1}`
+- structs are like maps but they offer compile time checks on keys and runtime 
+  checks on type
+
 [Initial Coordinate module](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/20e75eb)
 - [alias Coordinate](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/27709c4)
 - [defstruct :row, :col  with @enforce_keys to ensure both attributes are present](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/38ef880)
@@ -99,24 +105,19 @@ $ tree
 `$ iex -S mix` to play with Coordinate
 
 ```elixir
-
-iex> alias IslandsEngine.Coordinate # Let’s alias the module to save some typing.
+iex(2)> alias IslandsEngine.Coordinate
 IslandsEngine.Coordinate
 
-iex> Coordinate.new(1, 1)
+iex(3)> Coordinate.new(1, 1)
 {:ok, %IslandsEngine.Coordinate{col: 1, row: 1}}
 
-iex> Coordinate.new(-1, 1)
+iex(4)> Coordinate.new(-1, 1)
 {:error, :invalid_coordinate}
 
-iex> Coordinate.new(11, 1)
-{:error, :invalid_coordinate}
-
-iex> %Coordinate{row: 5}
-** (ArgumentError) the following keys must also be given when building struct
-    IslandsEngine.Coordinate: [:col]
-    (new_islands) expanding struct: IslandsEngine.Coordinate.__struct__/1
-                  iex:4: (file)
+iex(5)> %Coordinate{row: 5}
+** (ArgumentError) the following keys must also be given when building struct IslandsEngine.Coordinate: [:col]
+   (islands_engine) expanding struct: IslandsEngine.Coordinate.__struct__/1
+                             iex:5: (file)
 ```
 
 #### Transforming Data
