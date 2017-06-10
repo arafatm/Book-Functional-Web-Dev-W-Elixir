@@ -120,6 +120,13 @@ iex(5)> %Coordinate{row: 5}
                              iex:5: (file)
 ```
 
+##### Guesses
+
+Guess == :hits + :misses
+
+Use [MapSet](https://hexdocs.pm/elixir/MapSet.html) to ensure uniqueness
+
+
 #### Transforming Data
 
 #### Putting the Pieces Together
