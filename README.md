@@ -130,6 +130,7 @@ Guess == :hits + :misses
 
 Use [MapSet](https://hexdocs.pm/elixir/MapSet.html) to ensure uniqueness
 
+[IslandsEngine.Guesses](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/c01c20a)
 
 #### Transforming Data
 
