@@ -29,6 +29,6 @@ defmodule IslandsEngine.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [{:mix_test_watch, "~> 0.3", only: :dev, runtime: false}]
   end
 end

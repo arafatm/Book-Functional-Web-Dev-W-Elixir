@@ -2,6 +2,12 @@
 # and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
 
+# clear terminal on each test run
+if Mix.env == :dev do
+  config :mix_test_watch,
+  clear: true
+end
+
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
 # file won't be loaded nor affect the parent project. For this reason,
