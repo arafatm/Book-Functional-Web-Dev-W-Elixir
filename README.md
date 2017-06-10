@@ -94,6 +94,30 @@ $ tree
 [Initial Coordinate module](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/20e75eb)
 - [alias Coordinate](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/27709c4)
 - [defstruct :row, :col  with @enforce_keys to ensure both attributes are present](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/38ef880)
+- [Coordinate.new with row/col validation they are within 1..10](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/351c021)
+
+`$ iex -S mix` to play with Coordinate
+
+```elixir
+
+iex> alias IslandsEngine.Coordinate # Let’s alias the module to save some typing.
+IslandsEngine.Coordinate
+
+iex> Coordinate.new(1, 1)
+{:ok, %IslandsEngine.Coordinate{col: 1, row: 1}}
+
+iex> Coordinate.new(-1, 1)
+{:error, :invalid_coordinate}
+
+iex> Coordinate.new(11, 1)
+{:error, :invalid_coordinate}
+
+iex> %Coordinate{row: 5}
+** (ArgumentError) the following keys must also be given when building struct
+    IslandsEngine.Coordinate: [:col]
+    (new_islands) expanding struct: IslandsEngine.Coordinate.__struct__/1
+                  iex:4: (file)
+```
 
 #### Transforming Data
 
