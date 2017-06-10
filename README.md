@@ -4,6 +4,8 @@ https://pragprog.com/book/lhelph/functional-web-development-with-elixir-otp-and-
 
 [Original Source Code from Author](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/2371009)
 
+[To setup Continuous testing with mix_test_watch](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/e404877)
+
 ### 1. Mapping Our Route
 
 #### Lay The Foundation With Elixir
@@ -101,6 +103,8 @@ $ tree
 - [alias Coordinate](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/27709c4)
 - [defstruct :row, :col  with @enforce_keys to ensure both attributes are present](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/38ef880)
 - [Coordinate.new with row/col validation they are within 1..10](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/351c021)
+
+[CoordinateTest](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/496da46)
 
 `$ iex -S mix` to play with Coordinate
 
