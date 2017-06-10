@@ -2,7 +2,7 @@
 
 https://pragprog.com/book/lhelph/functional-web-development-with-elixir-otp-and-phoenix
 
-Source Code: https://github.com/functional-web-dev
+[Original Source Code from Author](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/2371009)
 
 ### 1. Mapping Our Route
 
@@ -62,9 +62,38 @@ DB also distorts the domain
 
 #### Let’s Build It
 
+[$ mix new islands_engine --sup](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/f32bc8c)
 
+`mix new` create skeleton
+```
+$ tree
+  .
+  ├── README.md
+  ├── config
+  │   └── config.exs
+  ├── lib
+  │   ├── islands_engine
+  │   │   └── application.ex
+  │   └── islands_engine.ex
+  ├── mix.exs
+  └── test
+      ├── islands_engine_test.exs
+      └── test_helper.exs
+```
 
 #### Discover the Entities, Model the Domain
+
+- Players need to be able to position islands on their own boards.
+- Players need to be able to guess coordinates on their opponent’s boards.
+- The game needs to determine if a guess results in a hit or a miss.
+- The game needs to determine if a guess results in a forested island.
+- The game needs to determine if a guess results in a win.
+
+##### Coordinates
+
+[Initial Coordinate module](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/20e75eb)
+- [alias Coordinate](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/27709c4)
+- [defstruct :row, :col  with @enforce_keys to ensure both attributes are present](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/38ef880)
 
 #### Transforming Data
 
