@@ -1,5 +1,9 @@
 # Book-Functional-Web-Dev-W-Elixir
 
+https://pragprog.com/book/lhelph/functional-web-development-with-elixir-otp-and-phoenix
+
+Source Code: https://github.com/functional-web-dev
+
 ### 1. Mapping Our Route
 
 #### Lay The Foundation With Elixir
@@ -38,35 +42,41 @@ Similar to Battleship
 							 	 /    \
 								P1		P2
 
-		
 		Player --> Board %{C,C,C,..}
 		       --> Island Set %IslandSet{I,I,I,I,I}
 
 		I --> [C...][C...]...
 
-## Part I — Build a Game Engine in Pure Elixir
+## Part I. Define the Functional Core in Elixir
 
-### 2. Model State With Agents .
+### 2. Model Data and Behavior
 
-#### Embracing Stateful Servers
+- model domain elements as Elixir datatypes
+- define behavior as data transformation
 
-#### Agents
+#### The Benefits
+
+(Web) frameworks imply a certain domain and make business domain fuzzy
+
+DB also distorts the domain
 
 #### Let’s Build It
 
-#### Model A Simple Entity
 
-#### Model a Relationship With a List
 
-#### Model a Relationship With a Map
+#### Discover the Entities, Model the Domain
 
-#### Model Relationships With a Struct
+#### Transforming Data
 
-#### A Single Representation
+#### Putting the Pieces Together
 
 #### Wrapping Up
 
-### 3. Wrap It Up In a GenServer
+### 3. From Data To State
+
+## Part II. Add OTP for Concurrency and Fault Tolerance
+
+### 4. Wrap It Up In a GenServer
 
 #### Services, A Fuller Picture
 
@@ -88,7 +98,7 @@ Similar to Battleship
 
 #### Wrapping Up
 
-### 4. Manage State with gen_statem
+### 5. Manage State with gen_statem
 
 #### A Bit of History
 
@@ -106,11 +116,11 @@ Similar to Battleship
 
 #### Wrapping Up
 
-### 5. Process Supervision For Recovery
+### 6. Process Supervision For Recovery
 
-## Part II — Add a Web Interface With Phoenix
+## Part III. Add a Web Interface With Phoenix
 
-### 6. Generate a New Web Interface With Phoenix
+### 7. Generate a New Web Interface With Phoenix
 
 #### Frameworks
 
@@ -124,7 +134,7 @@ Similar to Battleship
 
 #### Wrapping Up
 
-### 7. Create Persistent Connections With Phoenix Channels
+### 8. Create Persistent Connections With Phoenix Channels
 
 #### The Beauty of Channels
 
@@ -144,9 +154,6 @@ Similar to Battleship
 
 #### Wrapping Up
 
-## Appendix
+## A1. Testing
 
-### Testing
-
-
-
+## A2. Installing System Dependencies
