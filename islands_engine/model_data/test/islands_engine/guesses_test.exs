@@ -67,6 +67,10 @@ defmodule GuessesTest do
     {:ok, coord2} = Coordinate.new(7,9)
     guesses = Guesses.add(guesses, :miss, coord2)
 
+    # TODO: Can't figure out how to pattern match
+    # %IslandsEngine.Guesses{hits: #MapSet<[]>, misses: #MapSet<[%IslandsEngine.Coordinate{col: 3, row: 8}, %IslandsEngine.Coordinate{col: 9, row: 7}]>}
     assert MapSet.size(guesses.misses) == 2
+
+
   end
 end
