@@ -6,9 +6,9 @@ https://pragprog.com/book/lhelph/functional-web-development-with-elixir-otp-and-
 
 [To setup Continuous testing with mix_test_watch](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/e404877)
 
-### 1. Mapping Our Route
+## 0 Mapping Our Route
 
-#### Lay The Foundation With Elixir
+### Lay The Foundation With Elixir
 
 Domain in native  Elixir instead of ORM
 
@@ -20,15 +20,15 @@ Finite state machine to manage transition
 
 Supervision tree for fault tolerance
 
-#### Add a Web Interface With Phoenix
+### Add a Web Interface With Phoenix
 
 UI in Phoenix (without Ecto)
 
-#### Functional Web Development
+### Functional Web Development
 
 Functional => composition at every layer scaled to application. :w
 
-#### The Game of Islands
+### The Game of Islands
 
 Similar to Battleship
 - 10x10 grid: A-J, 1-10
@@ -49,20 +49,15 @@ Similar to Battleship
 
 		I --> [C...][C...]...
 
-## Part I. Define the Functional Core in Elixir
+## 1 Define the Functional Core in Elixir
 
-### 2. Model Data and Behavior
-
-- model domain elements as Elixir datatypes
-- define behavior as data transformation
-
-#### The Benefits
+### The Benefits
 
 (Web) frameworks imply a certain domain and make business domain fuzzy
 
 DB also distorts the domain
 
-#### Let’s Build It
+### Let’s Build It
 
 [$ mix new islands_engine --sup](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/f32bc8c)
 
@@ -83,7 +78,7 @@ $ tree
       └── test_helper.exs
 ```
 
-#### Discover the Entities, Model the Domain
+### Discover the Entities, Model the Domain
 
 - Players need to be able to position islands on their own boards.
 - Players need to be able to guess coordinates on their opponent’s boards.
@@ -91,7 +86,7 @@ $ tree
 - The game needs to determine if a guess results in a forested island.
 - The game needs to determine if a guess results in a win.
 
-##### Coordinates
+#### Coordinates
 
 3 data struct options:
 - tuple `{1, 1}` but cannot be encoded as JSON
@@ -124,7 +119,7 @@ iex(5)> %Coordinate{row: 5}
                              iex:5: (file)
 ```
 
-##### Guesses
+#### Guesses
 
 Guess == :hits + :misses
 
@@ -132,7 +127,7 @@ Use [MapSet](https://hexdocs.pm/elixir/MapSet.html) to ensure uniqueness
 
 [IslandsEngine.Guesses](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/c01c20a)
 
-##### Islands
+#### Islands
 
 Islands
 - come in five different shapes, `:atoll`, `:dot`, `:l_shape`, `:s_shape`, and `:square`.
@@ -153,11 +148,11 @@ We can use [Enum.reduce/2](https://hexdocs.pm/elixir/Enum.html#reduce/2) to
 iterate over the offsets in building the island
 
 :boom: We have to check that the offsets are valid, better is 
-[Enum.reduce_while/2](https://hexdocs.pm/elixir/Enum.html#reduce_while/3)
+[Enum.reduce_while/3](https://hexdocs.pm/elixir/Enum.html#reduce_while/3)
 
 [IslandsEngine.Island create Islands with defined shapes](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/12efc40)
 
-##### Boards
+#### Boards
 
 [IslandsEngine.Board](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/6e2ff84)
 is simple. For now just return empty map
@@ -166,96 +161,43 @@ is simple. For now just return empty map
 - check forests
 - etc
 
-test
-
-#### Transforming Data
-
-#### Putting the Pieces Together
-
-#### Wrapping Up
-
-### 3. From Data To State
-
-## Part II. Add OTP for Concurrency and Fault Tolerance
-
-### 4. Wrap It Up In a GenServer
-
-#### Services, A Fuller Picture
-
-#### OTP Solutions
-
-#### Introducing OTP Behaviours
-
-#### Getting Started With GenServer
-
-#### Initializing GenServer State
-
-#### Customizing GenServer Behavior
-
-#### Pipelines to Handle Complexity
-
-#### Naming GenServer Processes
-
-#### Stopping GenServer Processes
-
-#### Wrapping Up
-
-### 5. Manage State with gen_statem
-
-#### A Bit of History
-
-#### State Machines and :gen_statem
-
-#### Getting Started with :gen_statem
-
-#### Adding New Behavior
-
-#### Fully Customizing Our State Machine
-
-#### Integrate the :gen_statem with the GenServer
-
-#### Seeing the GenServer and :gen_statem in Action
-
-#### Wrapping Up
-
-### 6. Process Supervision For Recovery
-
-## Part III. Add a Web Interface With Phoenix
-
-### 7. Generate a New Web Interface With Phoenix
-
-#### Frameworks
-
-#### OTP Applications
-
-#### Generate a New Phoenix Application
-
-#### Adding a New Dependency
-
-#### Call the Logic from the Interface
-
-#### Wrapping Up
-
-### 8. Create Persistent Connections With Phoenix Channels
-
-#### The Beauty of Channels
-
-#### The Pieces That Make a Channel
-
-#### Let’s Build It
-
-#### Establish a Client Connection
-
-#### Converse Over a Channel
-
-#### Connect the Channel to the Game
-
-#### Phoenix Presence
-
-#### Authorization
-
-#### Wrapping Up
-
-## A1. Testing
-
-## A2. Installing System Dependencies
+### Transforming Data
+### Putting the Pieces Together
+### Wrapping Up
+## 2 Add OTP for Concurrency and Fault Tolerance
+### Services, A Fuller Picture
+### OTP Solutions
+### Introducing OTP Behaviours
+### Getting Started With GenServer
+### Initializing GenServer State
+### Customizing GenServer Behavior
+### Pipelines to Handle Complexity
+### Naming GenServer Processes
+### Stopping GenServer Processes
+### Wrapping Up
+### A Bit of History
+### State Machines and :gen_statem
+### Getting Started with :gen _statem
+### Adding New Behavior
+### Fully Customizing Our State Machine
+### Integrate the :gen_statem with the GenServer
+### Seeing the GenServer and :gen_statem in Action
+### Wrapping Up
+## 3 Add a Web Interface With Phoenix
+### Frameworks
+### OTP Applications
+### Generate a New Phoenix Application
+### Adding a New Dependency
+### Call the Logic from the Interface
+### Wrapping Up
+### The Beauty of Channels
+### The Pieces That Make a Channel
+### Lets Build It
+### Establish a Client Connection
+### Converse Over a Channel
+### Connect the Channel to the Game
+### Phoenix Presence
+### Authorization
+### Wrapping Up
+## Appendix 1: Testing
+## Appendix 2: Installing System Dependencies
