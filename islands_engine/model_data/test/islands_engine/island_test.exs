@@ -65,4 +65,14 @@ defmodule IslandTest do
   test "checks islands don't overlap", overlap do
     refute Island.overlaps?(overlap.square, overlap.l_shape)
   end
+
+  test "guess is a hit", overlap do
+    assert {:hit, coords} = Island.guess(overlap.square, Enum.at(overlap.square.coordinates, 0))
+    assert %IslandsEngine.Island{coordinates: coords} = coords
+    assert MapSet.size(coords) > 0
+  end
+
+  test "guess is a miss", overlap do
+    assert :miss = Island.guess(overlap.square, Coordinate.new(5,5))
+  end
 end
