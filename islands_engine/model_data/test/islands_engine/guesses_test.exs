@@ -45,4 +45,28 @@ defmodule GuessesTest do
 
     assert MapSet.size(guesses.misses) == 1
   end
+
+  test "can guess a hit" do
+    guesses = Guesses.new()
+
+    {:ok, coord1} = Coordinate.new(8,3)
+    guesses = Guesses.add(guesses, :hit, coord1)
+
+    {:ok, coord2} = Coordinate.new(7,9)
+    guesses = Guesses.add(guesses, :hit, coord2)
+
+    assert MapSet.size(guesses.hits) == 2
+  end
+
+  test "can guess a miss" do
+    guesses = Guesses.new()
+
+    {:ok, coord1} = Coordinate.new(8,3)
+    guesses = Guesses.add(guesses, :miss, coord1)
+
+    {:ok, coord2} = Coordinate.new(7,9)
+    guesses = Guesses.add(guesses, :miss, coord2)
+
+    assert MapSet.size(guesses.misses) == 2
+  end
 end
