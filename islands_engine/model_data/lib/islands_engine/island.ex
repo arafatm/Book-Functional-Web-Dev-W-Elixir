@@ -4,6 +4,10 @@ defmodule IslandsEngine.Island do
   @enforce_keys [:coordinates, :hit_coordinates]
   defstruct [:coordinates, :hit_coordinates]
 
+  @island_types [:atoll, :dot, :l_shape, :s_shape, :square]
+
+  def types(), do: @island_types
+
   def new(type, %Coordinate{} = upper_left) do
     with  [_|_] = offsets <- offsets(type),
          %MapSet{} = coordinates <- add_coordinates(offsets, upper_left)

@@ -5,6 +5,10 @@ defmodule IslandTest do
 
   alias IslandsEngine.{ Coordinate, Island }
 
+  test "has types" do
+    assert [:atoll, :dot, :l_shape, :s_shape, :square] = Island.types
+  end
+
   test "can create :atoll" do
     isl = Island.new(:atoll, elem(Coordinate.new(4,6), 1))
     assert {:ok, %Island{coordinates: coordinates, hit_coordinates: _}} = isl
