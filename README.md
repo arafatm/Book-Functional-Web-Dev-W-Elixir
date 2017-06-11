@@ -190,6 +190,10 @@ to check if a coordinate is a member of a set
 
 Check if [Island.forested?(island)](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/fff2b61)
 
+Add a function to return list of valid island types
+
+Check that we can get [Island.types](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/bab1b7c)
+
 ### Putting the Pieces Together
 ### Wrapping Up
 ## 2 Add OTP for Concurrency and Fault Tolerance
