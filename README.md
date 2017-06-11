@@ -157,6 +157,15 @@ iterate over the offsets in building the island
 
 [IslandsEngine.Island create Islands with defined shapes](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/12efc40)
 
+##### Boards
+
+[IslandsEngine.Board](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/6e2ff84)
+is simple. For now just return empty map
+- will hold player islands
+- broker messages
+- check forests
+- etc
+
 #### Transforming Data
 
 #### Putting the Pieces Together
