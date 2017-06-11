@@ -183,6 +183,11 @@ Need to check for overlaps when placing islands. We can use
 
 [Island.overlap?](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/6b5902f)
 
+Next we use [MapSet.member?/2](https://hexdocs.pm/elixir/MapSet.html#member?/2)
+to check if a coordinate is a member of a set
+
+[Island.guess(island, coordinate)](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/6eb0dd9)
+
 ### Putting the Pieces Together
 ### Wrapping Up
 ## 2 Add OTP for Concurrency and Fault Tolerance
