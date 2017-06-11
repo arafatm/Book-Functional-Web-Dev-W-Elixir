@@ -75,4 +75,15 @@ defmodule IslandTest do
   test "guess is a miss", overlap do
     assert :miss = Island.guess(overlap.square, Coordinate.new(5,5))
   end
+
+  test "is forested?", overlap do
+    dot = overlap.dot
+    {:hit, dot} = Island.guess(dot, Enum.at(dot.coordinates, 0))
+    assert Island.forested?(dot)
+  end
+
+  test "is not forested?", overlap do
+    :miss = Island.guess(overlap.dot, Coordinate.new(5,5))
+    refute Island.forested?(overlap.dot)
+  end
 end
