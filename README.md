@@ -132,6 +132,31 @@ Use [MapSet](https://hexdocs.pm/elixir/MapSet.html) to ensure uniqueness
 
 [IslandsEngine.Guesses](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/c01c20a)
 
+##### Islands
+
+Islands
+- come in five different shapes, `:atoll`, `:dot`, `:l_shape`, `:s_shape`, and `:square`.
+- made up of group of coordinates
+- determine if island is forested
+
+List comparison:
+- `[1,2] == [2,1]` is false
+-  `MapSet.equal?(MapSet.new([1, 2]), MapSet.new([2, 1]))` is true
+
+[IslandsEngine.Island](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/d7217ec)
+
+Islands can be thought of as an origin coordinate with offsets.
+
+e.g. `:square` = `Origin{row,col} + Offset{1,0} + Offset{0,1} + Offset{1,1}`
+
+We can use [Enum.reduce/2](https://hexdocs.pm/elixir/Enum.html#reduce/2) to 
+iterate over the offsets in building the island
+
+:boom: We have to check that the offsets are valid, better is 
+[Enum.reduce_while/2](https://hexdocs.pm/elixir/Enum.html#reduce_while/3)
+
+[IslandsEngine.Island create Islands with defined shapes](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/12efc40)
+
 #### Transforming Data
 
 #### Putting the Pieces Together
