@@ -188,6 +188,8 @@ to check if a coordinate is a member of a set
 
 [Island.guess(island, coordinate)](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/6eb0dd9)
 
+Check if [Island.forested?(island)](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/fff2b61)
+
 ### Putting the Pieces Together
 ### Wrapping Up
 ## 2 Add OTP for Concurrency and Fault Tolerance
