@@ -162,6 +162,27 @@ is simple. For now just return empty map
 - etc
 
 ### Transforming Data
+
+#### Guesses
+
+- track guesses. don't need to remove them, only write
+- add guessed coord to Guesses map
+- ^ calculate if hit or miss
+
+[IslandsEngine.Guesses add :hit or :miss](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/a9d41ae)
+
+#### Island
+
+3 roles:
+1. positioning islands
+2. guessing coordinates
+3. checking for a forested island.
+
+Need to check for overlaps when placing islands. We can use
+[MapSet.disjoint/2](https://hexdocs.pm/elixir/MapSet.html#disjoint?/2)
+
+[Island.overlap?](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/6b5902f)
+
 ### Putting the Pieces Together
 ### Wrapping Up
 ## 2 Add OTP for Concurrency and Fault Tolerance
