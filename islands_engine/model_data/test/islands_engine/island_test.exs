@@ -45,24 +45,24 @@ defmodule IslandTest do
     assert {:error, :invalid_island_type} = isl
   end
 
-#  test "has hit_coordinates" do
-#    isl = Island.new
-#    isl = update_in(isl.hit_coordinates, &MapSet.put(&1, elem(Coordinate.new(1,1), 1)))
-#    isl = update_in(isl.hit_coordinates, &MapSet.put(&1, elem(Coordinate.new(2,4), 1)))
-#    assert MapSet.size(isl.hit_coordinates) == 2
-#  end
-#
-#  test "cannot duplicate a coordinate" do
-#    isl = Island.new
-#    isl = update_in(isl.coordinates, &MapSet.put(&1, elem(Coordinate.new(1,1), 1)))
-#    isl = update_in(isl.coordinates, &MapSet.put(&1, elem(Coordinate.new(1,1), 1)))
-#    assert MapSet.size(isl.coordinates) == 1
-#  end
-#
-#  test "cannot duplicate a hit_coordinate" do
-#    isl = Island.new
-#    isl = update_in(isl.hit_coordinates, &MapSet.put(&1, elem(Coordinate.new(1,1), 1)))
-#    isl = update_in(isl.hit_coordinates, &MapSet.put(&1, elem(Coordinate.new(1,1), 1)))
-#    assert MapSet.size(isl.hit_coordinates) == 1
-#  end
+  setup overlap do
+    {:ok, square_c} = Coordinate.new(1,1)
+    {:ok, square} = Island.new(:square, square_c)
+
+    {:ok, dot_c} = Coordinate.new(1,2)
+    {:ok, dot} = Island.new(:dot, dot_c)
+
+    {:ok, l_shape_c} = Coordinate.new(5,6)
+    {:ok, l_shape} = Island.new(:l_shape, l_shape_c)
+
+    {:ok, square: square, dot: dot, l_shape: l_shape}
+  end
+
+  test "checks islands overlap", overlap do
+    assert Island.overlaps?(overlap.square, overlap.dot)
+  end
+
+  test "checks islands don't overlap", overlap do
+    refute Island.overlaps?(overlap.square, overlap.l_shape)
+  end
 end
