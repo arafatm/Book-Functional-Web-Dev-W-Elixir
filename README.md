@@ -209,8 +209,23 @@ find a hit island based on coordinate. Otherwise return `:miss`
 
 [Board.check_all_islands(board, coordinate)](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/e93d0b9)
 
+[Board.guess_response({key, island}, board)](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/4c43f1b)
+
+[Board.win_check](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/d890f1d)
+
+[Board.guess(board, %Coordinate{} = coordinate)](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/3f409d6)
+
+[Board.position_island(board, key %Island{} = island)](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/d4eb60c)
+
+Board should now be usable
 
 ### Putting the Pieces Together
+
+[Final test for IslandsEngine](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/0b32ffc)
+
+[IslandsEngineTest add an assert](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/4e1314e)
+
+
 ### Wrapping Up
 ## 2 Add OTP for Concurrency and Fault Tolerance
 ### Services, A Fuller Picture
