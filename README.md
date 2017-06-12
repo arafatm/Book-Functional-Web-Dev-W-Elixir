@@ -225,9 +225,9 @@ Board should now be usable
 
 [IslandsEngineTest add an assert](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/4e1314e)
 
-
-### Wrapping Up
 ## 2 Add OTP for Concurrency and Fault Tolerance
+### Chapter 3: Not yet Published
+
 ### Services, A Fuller Picture
 ### OTP Solutions
 ### Introducing OTP Behaviours
