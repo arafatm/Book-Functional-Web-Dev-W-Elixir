@@ -12,4 +12,14 @@ defmodule IslandsEngine.Board do
       key != new_key and Island.overlaps?(island, new_island)
     end)
   end
+
+  defp check_all_islands(board, coordinate) do
+    Enum.find_value(board, :miss, fn {key, island} ->
+      case Island.guess(island, coordinate) do
+        {:hit, island} -> {key, island}
+        :miss          -> false
+      end
+    end)
+  end
+
 end
