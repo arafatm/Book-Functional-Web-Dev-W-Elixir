@@ -194,6 +194,22 @@ Add a function to return list of valid island types
 
 Check that we can get [Island.types](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/bab1b7c)
 
+#### Board
+
+Board roles:
+- knows about and addresses all islands
+- delegate function calls to islands
+
+[Board.overlaps_existing_island?](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/cb7061e)
+
+[Board.all_islands_positioned?](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/736c2c3)
+
+Use [Enum.find_value/3](https://hexdocs.pm/elixir/Enum.html#find_value/3) to
+find a hit island based on coordinate. Otherwise return `:miss`
+
+[Board.check_all_islands(board, coordinate)](https://github.com/arafatm/Book-Functional-Web-Dev-W-Elixir/commit/e93d0b9)
+
+
 ### Putting the Pieces Together
 ### Wrapping Up
 ## 2 Add OTP for Concurrency and Fault Tolerance
