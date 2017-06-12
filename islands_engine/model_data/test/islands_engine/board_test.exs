@@ -13,12 +13,8 @@ defmodule BoardTest do
     b = Board.new
 
     b = Enum.reduce(Island.types, b, fn(x, b) ->
-      IO.puts inspect x
-      IO.puts inspect b
       Map.put_new(b, x, true)
     end)
-
-    IO.puts inspect b
 
     assert Board.all_islands_positioned?(b)
   end
