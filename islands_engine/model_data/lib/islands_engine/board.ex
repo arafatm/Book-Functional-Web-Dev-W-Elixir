@@ -1,10 +1,16 @@
 defmodule IslandsEngine.Board do
-	alias IslandsEngine.Island
+	alias IslandsEngine.{Island, Coordinate}
 
 	def new(), do: %{}
 
 	def all_islands_positioned?(board), do:
 	Enum.all?(Island.types, &(Map.has_key?(board, &1)))
+
+	def guess(board, %Coordinate{} = coordinate) do
+		board
+		|> check_all_islands(coordinate)
+		|> guess_response(board)
+	end
 
 	# Enumerate over islands in board and check for overlap
 	defp overlaps_existing_island?(board, new_key, new_island) do
