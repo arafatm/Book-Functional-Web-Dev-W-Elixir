@@ -16,7 +16,7 @@ defmodule IslandsEngineTest do
 
     assert {:ok, dot_coordinate} = Coordinate.new(2, 2)
     assert {:ok, dot} = Island.new(:dot, dot_coordinate)
-    assert Board.position_island(board, :dot, dot)
+    assert {:error, :overlapping_island} = Board.position_island(board, :dot, dot)
     assert {:ok, new_dot_coordinate} = Coordinate.new(3, 3)
     assert {:ok, dot} = Island.new(:dot, new_dot_coordinate)
     board = Board.position_island(board, :dot, dot)
